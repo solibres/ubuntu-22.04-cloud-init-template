@@ -59,7 +59,8 @@ qm set 999 --balloon 2048
 qm set 999 --ipconfig0 ip=dhcp 
 qm set 999 --nameserver 8.8.8.8 
 qm set 999 --searchdomain google.com 
-qm set 999 --sshkeys /root/.ssh/authorized_keys 
+qm set 999 --sshkeys /root/.ssh/authorized_keys
+qm set 999 --cicustom "user=local:snippets/999.yaml 
 qm template 999
 
 echo "Next up, clone VM, then expand the disk"
@@ -68,4 +69,3 @@ echo "You also still need to copy ssh keys to the newly cloned VM"
 figlet Felicitations !
 
 echo "Template créé avec succès !"
-

@@ -34,8 +34,8 @@ if should_download_image "$DISK_IMAGE"; then
     wget -q "$IMAGE_URL"
 fi
 
-sudo virt-customize -a /var/lib/vz/template/iso/$DISK_IMAGE --install qemu-guest-agent vim net-tools htop &&
-sudo apt update -y && sudo apt install libguestfs-tools -y &&
+sudo virt-customize -a /var/lib/vz/template/iso/$DISK_IMAGE --install qemu-guest-agent &&
+sudo apt update -y && sudo apt install libguestfs-tools net-tools htop -y &&
 sudo virt-customize -a /var/lib/vz/template/iso/$DISK_IMAGE --root-password password:Str0ngP4ssworD &&
 sudo virt-customize -a /var/lib/vz/template/iso/$DISK_IMAGE --run-command "echo -n > /etc/machine-id"
 

@@ -35,7 +35,9 @@ if should_download_image "$DISK_IMAGE"; then
 fi
 
 sudo virt-customize -a /var/lib/vz/template/iso/$DISK_IMAGE --install qemu-guest-agent &&
-sudo apt update -y && sudo apt install libguestfs-tools net-tools htop neofetch -y &&
+sudo apt update -y && sudo apt install libguestfs-tools net-tools htop neofetch openssh-server -y &&
+sudo systemctl enable --now ssh &&
+sudo ufw allow ssh &&
 sudo virt-customize -a /var/lib/vz/template/iso/$DISK_IMAGE --root-password password:Str0ngP4ssworD &&
 sudo virt-customize -a /var/lib/vz/template/iso/$DISK_IMAGE --run-command "echo -n > /etc/machine-id"
 

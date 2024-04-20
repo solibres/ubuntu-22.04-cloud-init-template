@@ -59,7 +59,8 @@ qm set 999 --ostype l26
 qm set 999 --balloon 2048 
 # qm set 999 --ciupgrade 1 
 # qm set 999 --ciuser ansible 
-qm set 999 --cicustom "user=local:snippets/999.yaml" 
+qm set 999 --cicustom "user=local:snippets/999.yaml"
+qm set 999 --cicustom "user=local:snippets/vendor.yaml"  
 qm set 999 --ipconfig0 ip=dhcp 
 qm set 999 --nameserver 8.8.8.8 
 qm set 999 --sshkeys /root/.ssh/authorized_keys
